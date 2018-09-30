@@ -34,8 +34,8 @@ class Area extends React.Component {
   }
 
   render() {
-    const growers = this.props.growersList || [];
-    const center = growers.length ? [growers[0].lat, growers[0].long] : DEFAULT_CENTER;
+    const growers = this.props.growersList || []; // short hand and checking if griwerList is undefinf we assined an empty array
+    const center = growers.length ? [growers[0].lat, growers[0].long] : DEFAULT_CENTER; //
 
     return (
       <div>
