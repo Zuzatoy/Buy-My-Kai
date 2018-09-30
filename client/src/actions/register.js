@@ -43,8 +43,8 @@ export function postUser (user) {
       request.post('/api/v1/users/register', userWithCoordinates);
     })
     .then((result) => {
-      console.log(result)
-      // dispatch(registerSuccess(result.data.user))
+      console.log(userWithCoordinates)
+       dispatch(registerSuccess(userWithCoordinates))
     })
     .catch((err) => {
       dispatch(showError(err.message))

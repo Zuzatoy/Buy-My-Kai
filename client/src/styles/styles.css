@@ -1,6 +1,9 @@
 /* 
   Main Component CSS File
 */
+.app {
+  letter-spacing: normal;
+}
 
 .background {
   background: url("../images/background.png");

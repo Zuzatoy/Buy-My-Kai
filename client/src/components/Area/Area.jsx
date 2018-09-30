@@ -7,6 +7,8 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
 import './styles.css';
 
+const DEFAULT_CENTER = [-36.848, 174.763];
+
 class Area extends React.Component {
   constructor(props) {
     super(props)
@@ -37,38 +39,46 @@ class Area extends React.Component {
   }
 
   render() {
-    const growersList = this.props.growersList || [];
-    // console.log('jsx:', this.props.growersList)
+    const growers = this.props.growersList || [];
+    const center = growers.length ? [growers[0].lat, growers[0].long] : DEFAULT_CENTER;
+
     return (
       <div>
         <h1>Search For Growers</h1>
         <input type="text" name='suburb' value={this.state.suburb} placeholder='Suburb' onChange={this.handleChange} /><br />
         <button onClick={this.handleClick}>search</button>
-        <div>{growersList.map(list =>
+        <div>{growers.map(list =>
           <List key={list.id} list={list} />
+
         )}</div>
-        <Map className="Leaflet" style={{ position: 'absolute' }} center={[-36.848461, 174.763336]} zoom={15}>
+        <Map className="Leaflet" center={center} zoom={13}>
           <TileLayer
             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <div>{growersList.map(x => console.log(x, 33) ||
-            <Marker position={[x.id]}>
+          {growers.length && growers.map(({
+            id,
+            lat,
+            long,
+            hours,
+            name,
+            description
+          }) => (
+            <Marker key={id} position={[lat, long]}>
               <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
+                <div>{name}</div>
+                <br/>
+                <div>{description}</div>
+                <br/>
+                <div>{hours}</div>
+              </Popup>
             </Marker>
-          )
-        }
-          )}
-
-          </div>
+          ))}
         </Map>
       </div>
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {
