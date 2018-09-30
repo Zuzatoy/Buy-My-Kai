@@ -1,16 +1,15 @@
 import React from 'react'
-// import {Redirect} from 'react-router-dom'
-import { sendNeighbourhood } from '../../actions/area'
-import { connect } from 'react-redux'
+import {sendNeighbourhood} from '../../actions/area'
+import {connect} from 'react-redux'
 import List from './List'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import {Map, TileLayer} from 'react-leaflet'
 
 import './styles.css';
 
 const DEFAULT_CENTER = [-36.848, 174.763];
 
 class Area extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       suburb: ''
@@ -19,23 +18,19 @@ class Area extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick() {
+  handleClick () {
     this.sendNeighbourhood(this.state.suburb)
   }
 
-  handleChange(e) {
+  handleChange (e) {
     e.preventDefault()
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  sendNeighbourhood() {
+  sendNeighbourhood () {
     this.props.dispatch(sendNeighbourhood(this.state))
-    // .then(setTimeout(this.setState({
-    //   ready: true
-    // }), 5500
-    // ))
   }
 
   render() {
@@ -85,5 +80,4 @@ const mapStateToProps = (state) => {
     growersList: state.areaReducer.growersList
   }
 }
-
 export default connect(mapStateToProps)(Area)
