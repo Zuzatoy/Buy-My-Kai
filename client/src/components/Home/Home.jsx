@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {Button} from '@material-ui/core'
 import {connect} from 'react-redux'
 
-import styles from './styles.css'
+import './styles.css'
 import logo from '../../images/Logo.png'
 
 function Home (props) {

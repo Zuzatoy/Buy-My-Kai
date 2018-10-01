@@ -2,6 +2,7 @@ import React from 'react'
 // import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {sendProduct} from '../../actions/products'
+import './styles.css'
 
 export class Addproduct extends React.Component {
   constructor (props) {
@@ -46,9 +47,9 @@ export class Addproduct extends React.Component {
     return (
       <div>
         <h1>Add a Product</h1>
-        <input name='productName'value={this.state.productName} placeholder='product name' onChange={this.handleChange}></input>
-        <input name='price'value={this.state.price} placeholder='price' onChange={this.handleChange}></input>
-        <input name='quantity'value={this.state.quantity} placeholder='quantity' onChange={this.handleChange}></input>
+        <input name='productName'value={this.state.productName} placeholder='product name' onChange={this.handleChange}></input><br/>
+        <input name='price'value={this.state.price} placeholder='price' onChange={this.handleChange}></input><br/>
+        <input name='quantity'value={this.state.quantity} placeholder='quantity' onChange={this.handleChange}></input><br />
         <input name='productDescription'value={this.state.description} placeholder='description' onChange={this.handleChange}></input><br />
         <label>Organic</label>
         <input type='checkbox' name='organic' value={this.state.organic} onClick={this.handleOrganic}></input><br/>
