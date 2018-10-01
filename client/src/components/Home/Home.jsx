@@ -1,19 +1,20 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Button} from '@material-ui/core'
-import {connect} from 'react-redux'
 
-import './styles.css'
-import logo from '../../images/Logo.png'
+import '../../styles/styles.css'
+import logo from '../../images/logo-4.png'
 
-function Home (props) {
+export function Home (props) {
   return (
-    <div className="pure-img background">
-      <div className="home-container pure-u-1-1 pure-u-md-1-2">
-        <img className="pure-img logo" src={logo}/>
-        <h2>Welcome!</h2>
-        <p>Buy My Kai connects people <br/>
-        through the food we grow in our backyard.</p>
+    <div className="home">
+      <div className="pure-img background"></div>
+      <div className="container pure-u-1-1 pure-u-md-1-2">
+        <img className="pure-img logo" src={logo} />
+        <h3>WELCOME !</h3>
+        <p>Buy My Kai connects people <br />
+          through the food we grow <br />
+          in our backyard </p>
         <div className="btn-group pure-u-1">
           <Link to="/login">
             <Button
@@ -29,6 +30,9 @@ function Home (props) {
               Register
             </Button>
           </Link>
+        </div>
+        <div className='footer pure-u-1'>
+          <pp>Copyright © Buy My Kai 2018 Nikau</pp>
         </div>
       </div>
     </div>
