@@ -1,11 +1,11 @@
 import request from 'axios'
 
+import {getHeaders} from '../utils/api'
+import {setToken} from '../utils/token'
+
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const AREA_PENDING = 'AREA_PENDING'
 export const AREA_SUCCESS = 'AREA_SUCCESS'
-
-import {getHeaders} from '../utils/api'
-import {setToken} from '../utils/token'
 
 export const showError = (errorMessage) => {
   return {
