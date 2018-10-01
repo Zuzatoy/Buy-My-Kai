@@ -24,7 +24,8 @@
   "devDependencies": {
     "concurrently": "^4.0.1",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "supertest": "^3.3.0"
   },
   "scripts": {
     "build": "cd client && yarn build",
@@ -37,5 +38,5 @@
     "server:dev": "nodemon index",
     "server:prod": "node index",
     "start": "yarn --silent message && yarn server:prod"
-  }
+    }
 }

@@ -89,5 +89,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.2"
   }
 }
