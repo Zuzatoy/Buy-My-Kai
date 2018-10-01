@@ -5,7 +5,7 @@ import {Button} from '@material-ui/core'
 import '../../styles/styles.css'
 import logo from '../../images/logo-4.png'
 
-export function Home (props) {
+export default function Home (props) {
   return (
     <div className="home">
       <div className="pure-img background"></div>
@@ -38,5 +38,3 @@ export function Home (props) {
     </div>
   )
 }
-
-export default connect()(Home)
