@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Button} from '@material-ui/core'
 
+import './styles.css'
+
 import Addproduct from '../Product/Addproduct'
 
 class Profile extends React.Component {
