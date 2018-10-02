@@ -43,14 +43,22 @@ class Eater extends React.Component {
             <p>How to use the App</p>
             <div className="profile-info pure-u-1">
               <div>
-                <h5>email</h5><p>{profile.email}</p>
+                <h5>email</h5><p className="display-profile"
+                >{profile.email}</p>
                 {/* <Button
                 className="btn--fab"
                 variant="extendedFab">
                 <i className="fas fa-user-check"></i>
               </Button> */}
                 <span className="pure-u-1 fab-label--right">
-                  <h5>Wanna become a grower? <Button onClick={this.handleClick}>Click here</Button></h5></span>
+                  <h5>Wanna become a grower?
+                    <Button
+                      className="pure-button"
+                      onClick={this.handleClick}>
+                    Click here
+                    </Button>
+                  </h5>
+                </span>
               </div>
             </div>
           </div>

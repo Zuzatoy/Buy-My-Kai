@@ -2,7 +2,7 @@ import React from 'react'
 import {sendNeighbourhood} from '../../actions/area'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import List from './List'
+// import List from './List'
 import {Map, TileLayer, Marker, Popup} from 'react-leaflet'
 
 import '../../styles/styles.css'
@@ -63,38 +63,38 @@ class Area extends React.Component {
               value={this.state.suburb}
               onChange={this.handleChange} /><br/>
             <button className="btn btn-secondary" onClick={this.handleClick}>SEARCH</button>
-            <div>{growers.map(list =>
-              <List key={list.id} list={list} />
-            )}</div>
-          </div>
-          <div className="map">
-            <Map className="Leaflet" center={center} zoom={13}>
-              <TileLayer
-                attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              {growers.length && growers.map(({
-                id,
-                lat,
-                long,
-                hours,
-                name,
-                description
-              }) => (
-                <Marker key={id} position={[lat, long]}>
-                  <Popup>
-                    <div>{name}</div>
-                    <div>{description}</div>
-                  </Popup>
-                </Marker>
-              ))}
-            </Map>
-          </div>
-          <div className='backtotop  pure-u-1'>
-            <a href="#top"><h5> Return to top <i className="fas fa-caret-up"></i></h5></a>
+            {/* <div>{growers.map(list =>
+              <List key={list.id} list={list} /> */}
           </div>
         </div>
+        <div className="map">
+          <Map className="Leaflet" center={center} zoom={13}>
+            <TileLayer
+              attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {growers.length && growers.map(({
+              id,
+              lat,
+              long,
+              hours,
+              name,
+              description
+            }) => (
+              <Marker key={id} position={[lat, long]}>
+                <Popup>
+                  <div>{name}</div>
+                  <div>{description}</div>
+                </Popup>
+              </Marker>
+            ))}
+          </Map>
+        </div>
+        <div className='backtotop  pure-u-1'>
+          <a href="#top"><h5> Return to top <i className="fas fa-caret-up"></i></h5></a>
+        </div>
       </div>
+      // </div>
     )
   }
 }
