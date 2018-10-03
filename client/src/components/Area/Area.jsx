@@ -51,8 +51,7 @@ class Area extends React.Component {
 
     return (
       <div className="home">
-        <MapDrawer />
-        <div className="pure-img background"></div>
+        <div className="pure-img background-area"></div>
         <div className="container pure-u-1">
           <Link to='/'>
             <img className="pure-img logo-small" src={logo} />

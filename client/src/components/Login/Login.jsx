@@ -41,7 +41,7 @@ class Login extends React.Component {
     const { error, isLoggedisOpenIn } = this.props
     return (
       <div>
-        <div className="pure-img background"></div>
+        <div className="pure-img background-login"></div>
         {error ? <div className="toast-error">{error.message}</div> : null}
 
         <div className="container pure-u-1">
@@ -78,7 +78,7 @@ class Login extends React.Component {
 
           <div className="btn-group pure-u-1">
             <Button
-              className='btn btn-secondary'
+              className='btn btn-primary'
               onClick={this.handleSubmit}
               disabled={this.state.disabled}>
               Go
